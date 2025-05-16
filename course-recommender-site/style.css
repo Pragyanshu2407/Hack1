@@ -1,0 +1,201 @@
+/* ===== Base Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  /* ===== Background ===== */
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+  
+  /* ===== Shooting Stars ===== */
+  .shooting-star {
+    position: fixed;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    opacity: 0.6;
+    z-index: -2;
+    animation: shoot 5s infinite ease-in-out;
+  }
+  
+  .star1 { top: 20%; left: -200px; animation-delay: 0s; }
+  .star2 { top: 40%; left: -200px; animation-delay: 2s; }
+  .star3 { top: 60%; left: -200px; animation-delay: 4s; }
+  
+  @keyframes shoot {
+    0%   { transform: translateX(0) translateY(0); opacity: 0.7; }
+    50%  { transform: translateX(800px) translateY(100px); opacity: 0.3; }
+    100% { transform: translateX(1600px) translateY(200px); opacity: 0; }
+  }
+  
+  /* ===== Orbiting Planets ===== */
+  .orbit-container {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: -2;
+    pointer-events: none;
+    animation: rotate 20s linear infinite;
+  }
+  
+  .orbit-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(255, 92, 51, 0.2);
+    border-radius: 50%;
+    animation: rotateReverse 40s linear infinite;
+  }
+  
+  .planet {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ff5c33, #ff2200);
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 92, 51, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .planet.small { width: 30px; height: 30px; }
+  .planet.medium { width: 45px; height: 45px; }
+  
+  /* ===== Logo ===== */
+  header .logo {
+    color: #ff5c33;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  /* ===== Login Box ===== */
+  .login-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(255, 92, 51, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .login-box h2 {
+    color: #ff5c33;
+    margin-bottom: 20px;
+  }
+  
+  .login-box input, .login-box button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .login-box input {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .login-box input:focus {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .login-box button {
+    background: #ff5c33;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .login-box button:hover {
+    transform: scale(1.05);
+  }
+  
+  .login-box a {
+    color: #ccc;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  /* ===== Info Section ===== */
+  .info-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+  }
+  
+  .vision, .mission {
+    max-width: 400px;
+  }
+  
+  h3 {
+    color: #ff5c33;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  /* ===== Animations ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  @keyframes rotateReverse {
+    from { transform: rotate(360deg); }
+    to   { transform: rotate(0deg); }
+  }
+  
+  .animate-fade {
+    animation: fadeIn 2s ease-out;
+  }
+  
